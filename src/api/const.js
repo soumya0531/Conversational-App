@@ -1,0 +1,9 @@
+export const QUICK_REPLY_TEXT = "quickReplytext";
+export const QUICK_REPLY_IMAGE = "quickReplyImage";
+export const QUICK_REPLY_ACTION = "quickReplyAction";
+export const QUICK_REPLY_ACTION_UPLOAD = "attachment";
+export const QUICK_REPLY_ACTION_URL = "url";
+export const QUICK_REPLY_ACTION_OPENAPP = "openApp";
+export const HERO_CARD = "heroCard";
+export const CAROUSEL = "carousal";
+export const TABLE = "excel";
