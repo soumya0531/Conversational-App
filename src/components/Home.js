@@ -30,17 +30,17 @@ import Layout from '../containers/Layout';
     
     render(){
       return (
-        <div className="App">
-        {this.state.isSignedIn ? (
+        <div>
+          {this.state.isSignedIn ? (
             <Fragment>
-            <Layout />
-          </Fragment>
-        ) : (
-          <StyledFirebaseAuth
-            uiConfig={this.uiConfig}
-            firebaseAuth={firebase.auth()}
-          />
-        )}
+             <Layout />
+            </Fragment>
+          ) : (
+            <StyledFirebaseAuth
+              uiConfig={this.uiConfig}
+              firebaseAuth={firebase.auth()}
+            />
+          )}
         </div>
       );
     }

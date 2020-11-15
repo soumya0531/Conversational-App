@@ -33,7 +33,7 @@ const ChatImg = styled.img`
 
 const ChatText = styled.div`
   max-width: 75%;
-  background-color: rgb(94, 158, 235);
+  background-color: #3F3250;
   color: white;
   border-radius: 5px;
   padding: 10px 20px;

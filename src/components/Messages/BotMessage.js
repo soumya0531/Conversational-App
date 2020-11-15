@@ -35,8 +35,9 @@ const ChatTextContainer = styled.div`
 
 const ChatText = styled.div`
   align-self: flex-start;
-  background-color: rgb(221, 242, 255);
+  background-color: #ACBFE6;
   border-radius: 5px;
+  color: #606060;
   margin: 0.5rem 0;
   padding: 10px 20px;
   box-shadow: 0 2px 5px -2px rgba(0, 100, 162, 0.3);

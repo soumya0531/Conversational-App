@@ -17,7 +17,7 @@ const StyledNavbar = styled(Navbar)`
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #f9c900;
+  background-color: #3F3250;
   z-index: 999;
 `;
 
@@ -64,7 +64,7 @@ const ChatHeader = () => {
           src= {logo}
           alt="Company Logo"
         />
-        <LogoText className="text-white">Company</LogoText>
+        <LogoText className="text-white">DELL SOLUTIONS</LogoText>
       </LogoContainer>
       <Toggler onClick={toggle} type="button" aria-label="Toggle navigation">
         <IconContext.Provider value={{ size: "24px", color: "#fff" }}>
