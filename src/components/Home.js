@@ -5,6 +5,8 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import './Home.css';
 import {auth, GoogleProvider} from '../api/firebase'
 import Layout from '../containers/Layout';
+import logo from '../images/logo.gif';
+
 
     class Home extends React.Component {
 
@@ -31,16 +33,36 @@ import Layout from '../containers/Layout';
     render(){
       return (
         <div>
+        
           {this.state.isSignedIn ? (
             <Fragment>
              <Layout />
             </Fragment>
           ) : (
-            <StyledFirebaseAuth
-              uiConfig={this.uiConfig}
-              firebaseAuth={firebase.auth()}
-            />
+<div className="limiter">
+  <div className='container-login100'>
+    <div className="wrap-login100">
+      <form className="login100-form validate-form">
+          <img className="login100-form-logo" src = { logo } alt = '!'></img>
+        <span className="login100-form-title p-b-34 p-t-27">
+          Log in
+        </span>
+        <StyledFirebaseAuth
+          uiConfig={this.uiConfig}
+          firebaseAuth={firebase.auth()}
+        />
+        <div className="text-center">
+          <a className="txt1" href="#">
+            Forgot Password?
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+            
           )}
+          
         </div>
       );
     }
