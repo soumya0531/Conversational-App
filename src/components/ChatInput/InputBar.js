@@ -28,6 +28,7 @@ const Wrapper = styled.div`
 
 const StyledInput = styled(Input)`
   border: ${Border};
+  &:active,
   &:focus {
     box-shadow: inset 0 0 0 ${ButtonColor};
     border-color: ${ButtonColor};

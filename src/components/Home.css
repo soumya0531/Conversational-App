@@ -56,14 +56,7 @@ input {
 	border: none;
 }
 
-textarea {
-  outline: none;
-  border: none;
-}
 
-textarea:focus, input:focus {
-  border-color: transparent !important;
-}
 
 
 input::-webkit-input-placeholder { color: #fff;}
