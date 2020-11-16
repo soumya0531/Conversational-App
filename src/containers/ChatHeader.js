@@ -86,7 +86,7 @@ const ChatHeader = () => {
       </Toggler>
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
-          <NavItem className="mx-2 ml-auto">
+          <NavItem className="mx-auto">
             <NavButton
               text="Sign Out"
               icon={<FaSignOutAlt />}
