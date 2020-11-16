@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+
 import { Collapse, Nav, Navbar, NavItem } from "reactstrap";
 import { IconContext } from "react-icons";
 import {
@@ -8,6 +10,8 @@ import {
   FaChevronUp,
   FaHome,
 } from "react-icons/fa";
+import { clearMessage } from "../redux/actions/messageAction";
+
 
 import NavButton from "../components/NavButton";
 import logo from "../images/logo.gif";
@@ -38,6 +42,9 @@ const LogoImage = styled.img`
 
 const LogoText = styled.h3`
   margin-top: 10px;
+  @media (max-width: 768px) {
+    font-size:28px;
+  }
 `;
 
 const Toggler = styled.button`
@@ -53,9 +60,15 @@ const Toggler = styled.button`
   }
 `;
 
+
 const ChatHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const dispatch = useDispatch();
+  const handleReset = () => {
+    dispatch(clearMessage());
+    firebase.auth().signOut();
+  };
   
   return (
     <StyledNavbar expand="md" className="px-4 px-md-3 py-1">
@@ -79,7 +92,7 @@ const ChatHeader = () => {
               icon={<FaSignOutAlt />}
               color="#A1373F"
               size="0.875rem"
-              onClick={() => firebase.auth().signOut()}
+              onClick={() => {handleReset()}}
             ></NavButton>
           </NavItem>
         </Nav>

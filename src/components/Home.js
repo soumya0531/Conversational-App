@@ -39,28 +39,28 @@ import logo from '../images/logo.gif';
              <Layout />
             </Fragment>
           ) : (
-<div className="limiter">
-  <div className='container-login100'>
-    <div className="wrap-login100">
-      <form className="login100-form validate-form">
-          <img className="login100-form-logo" src = { logo } alt = '!'></img>
-        <span className="login100-form-title p-b-34 p-t-27">
-          Log in
-        </span>
-        <StyledFirebaseAuth
-          uiConfig={this.uiConfig}
-          firebaseAuth={firebase.auth()}
-        />
-        <div className="text-center">
-          <a className="txt1" href="#">
-            Forgot Password?
-          </a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-            
+          <div className="limiter">
+            <div className='container-login100'>
+              <div className="wrap-login100">
+                <form className="login100-form validate-form">
+                    <img className="login100-form-logo" src = { logo } alt = '!'></img>
+                  <span className="login100-form-title p-b-34 p-t-27">
+                    Log in
+                  </span>
+                  <StyledFirebaseAuth
+                    uiConfig={this.uiConfig}
+                    firebaseAuth={firebase.auth()}
+                  />
+                  <div className="text-center">
+                    <a className="txt1" href="#">
+                      Forgot Password?
+                    </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+                      
           )}
           
         </div>
