@@ -52,11 +52,6 @@ import logo from '../images/logo.gif';
                       uiConfig={this.uiConfig}
                       firebaseAuth={firebase.auth()}
                     />
-                    <div className="text-center">
-                      <a className="txt1" href="#">
-                        Forgot Password?
-                      </a>
-                    </div>
                   </form>
                 </div>
               </div>
