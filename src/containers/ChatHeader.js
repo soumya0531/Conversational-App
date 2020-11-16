@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-
 import { Collapse, Nav, Navbar, NavItem } from "reactstrap";
 import { IconContext } from "react-icons";
 import {
   FaSignOutAlt,
   FaChevronDown,
-  FaChevronUp,
-  FaHome,
+  FaChevronUp
 } from "react-icons/fa";
 import { clearMessage } from "../redux/actions/messageAction";
 
