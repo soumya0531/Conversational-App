@@ -1,20 +1,20 @@
-# Smalltalk for LATEST Rasa Stack
+# Smalltalk using Rasa Stack
 
-Smalltalk for Rasa Stack has casual conversation data which can be used with Rasa Core and Rasa NLU as an add on to an existing training data.
+## Installation Requirements
+```pip install rasa --use-feature=2020-resolver```
 
-# Installation Requirements
-```pip install -r requirements.txt```
-```source ./venv/bin/activate```
+## Get weights 
+Get weights for the models from [here](https://drive.google.com/file/d/114stIsajdSPBYEPk7xo-ErXnZwUl8mmY/view?usp=sharing) and put them into ```bot/models``` directory.
 
-# Get weights 
-Get weights for the models from [here]() and put them into ```models`` directory.
-
-# Start Rasa action Server
+## Start Rasa action Server
 ```rasa run actions```
 
-# Start and run the chatbot
+## Start and run the chatbot
+```cd bot/```
+
 ``` rasa run -m models --endpoints endpoints.yml --port 5002 --credentials credentials.yml```
 
-# Usage
-[Local testing of chatbot on the server]
+## Usage
+[Test chatbot running on the server]
+
 ```python3 chatbot.py```
