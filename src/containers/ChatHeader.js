@@ -11,6 +11,7 @@ import {
 import { clearMessage } from "../redux/actions/messageAction";
 
 
+
 import NavButton from "../components/NavButton";
 import logo from "../images/logo.gif";
 import firebase from 'firebase';
@@ -18,7 +19,8 @@ import firebase from 'firebase';
 const StyledNavbar = styled(Navbar)`
   width: 100%;
   background-color: #3F3250;
-  z-index: 999;
+  border-radius: 10px 10px 0 0;
+  
 `;
 
 const LogoContainer = styled.a`
@@ -86,7 +88,7 @@ const ChatHeader = () => {
             <NavButton
               text="Sign Out"
               icon={<FaSignOutAlt />}
-              color="#A1373F"
+              color="#3d0c02"
               size="0.875rem"
               onClick={() => {handleReset()}}
             ></NavButton>

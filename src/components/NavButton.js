@@ -5,11 +5,12 @@ import { IconContext } from "react-icons";
 
 const Button = styled.button`
   display: flex;
+  font-weight: 600;
   align-items: center;
-  background-color: rgb(255, 255, 255);
+  background-color:  #F2EBE5;
   color: ${(props) => props.color};
-  border: 1px solid ${(props) => props.borderColor};
-  border-radius: 3px;
+  border: 2px solid #F2EBE5;
+  border-radius: 20px;
   font-size: ${(props) => props.size};
   padding: 10px;
   box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.3);

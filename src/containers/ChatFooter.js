@@ -18,11 +18,12 @@ import QuickReplyContainer from "../components/ChatInput/QuickReplyContainer";
 const Wrapper = styled.div`
   width: 100%;
   padding: 1rem 2.5rem;
-  background-color: #F7F3F5;
+  background-color: #d9d9d9;
+  border-radius: 0 0 10px 10px;
 `;
 
 const Container = styled(Collapse)`
-  width: 80%;
+  width: 90%;
   scroll-snap-type: x mandatory;
   overflow-x: auto;
   margin-bottom: 1rem;

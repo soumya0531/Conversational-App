@@ -1,7 +1,7 @@
 import React, { Fragment, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { createGlobalStyle } from "styled-components";
-
+import background from '../images/background.jpg';
 import ChatHeader from "./ChatHeader";
 import ChatFooter from "./ChatFooter";
 import ChatContainer from "./ChatContainer";
@@ -10,7 +10,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    background-color: red;
+    background-image: url(${ background });
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    overflow: hidden;
     padding: 10px 300px;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -31,10 +35,10 @@ const GlobalStyle = createGlobalStyle`
   }
   
   main {
-    width: 80%;
-    padding: 6rem 0;
+    width: 100%;
+    padding: 6rem ;
     height: 500px;
-    
+    overflow-y:auto;
     margin: 0 auto;
     @media(max-width: 992px) {
       width: 80%;
@@ -44,13 +48,20 @@ const GlobalStyle = createGlobalStyle`
   .chat{
     width: 900px;
     margin: 100px auto;
-    background-color: lightpink;
-    overflow-y:auto;
+    background-color: #F7F3F5;
+    border-radius: 10px;
     
   }
   .chat-footer{
     position: absolute;
     bottom:0;
+    width: 900px;
+    margin: 0 auto;
+  }
+
+  .chat-header{
+    position: sticky;
+    top:0;
     width: 900px;
     margin: 0 auto;
   }
