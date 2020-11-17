@@ -1,7 +1,10 @@
+
 import React, { Fragment } from 'react';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import './Home.css';
+// eslint-disable-next-line no-unused-vars
+import { auth } from '../api/firebase';
 import Layout from '../containers/Layout';
 import logo from '../images/logo.gif';
 
