@@ -1,9 +1,7 @@
 import React, { Fragment } from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import firebase from 'firebase';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import './Home.css';
-import {auth, GoogleProvider} from '../api/firebase'
 import Layout from '../containers/Layout';
 import logo from '../images/logo.gif';
 

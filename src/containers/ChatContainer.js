@@ -26,7 +26,7 @@ const ChatContainer = () => {
   // Send first message on component mount.
   useEffect(() => {
     dispatch(sendFirstMessage());
-  }, []);
+  }, [dispatch]);
 
   const scrollToBottom = (direct = false) => {
     // passing direct to this forces scrolling instantly, instead of animating.

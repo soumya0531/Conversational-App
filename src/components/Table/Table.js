@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useMemo, Fragment } from "react";
 import PropTypes from "prop-types";
 import BootstrapTable from "react-bootstrap-table-next";
