@@ -16,8 +16,6 @@ import QuickReplyContainer from "../components/ChatInput/QuickReplyContainer";
 
 
 const Wrapper = styled.div`
-  position: fixed;
-  bottom: 0;
   width: 100%;
   padding: 1rem 2.5rem;
   background-color: #F7F3F5;

@@ -16,8 +16,6 @@ import logo from "../images/logo.gif";
 import firebase from 'firebase';
 
 const StyledNavbar = styled(Navbar)`
-  position: fixed;
-  top: 0;
   width: 100%;
   background-color: #3F3250;
   z-index: 999;

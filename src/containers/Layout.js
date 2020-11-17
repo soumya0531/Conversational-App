@@ -24,15 +24,30 @@ const GlobalStyle = createGlobalStyle`
       padding: 6rem 0;
     }
   }
+  .chat{
+    width: 900px;
+    margin: 100px auto;
+    background-color: lightpink;
+    
+  }
+  .chat-footer{
+    position: fixed;
+  bottom: 0;
+  width: 900px;
+  }
 `;
 
 const Layout = () => {
   return (
     <Fragment>
       <GlobalStyle />
+      <div className="chat">
       <ChatHeader />
       <main><ChatContainer /></main>
+      <div className="chat-footer">
       <ChatFooter />
+      </div>
+      </div>
     </Fragment>
   );
 };
