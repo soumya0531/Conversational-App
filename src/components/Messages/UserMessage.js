@@ -16,17 +16,17 @@ const ChatContainer = styled.div`
 
 const ChatImg = styled.img`
   order: 1;
-  width: 80px;
+  width: 65px;
   border-radius: 50%;
   align-self: flex-end;
   margin-left: 1.25rem;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   @media (max-width: 768px) {
-    width: 75px;
+    width: 65px;
     margin-left: 1rem;
   }
   @media (max-width: 576px) {
-    width: 50px;
+    width: 65px;
     margin-left: 0.5rem;
   }
 `;

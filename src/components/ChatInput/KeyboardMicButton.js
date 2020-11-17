@@ -9,6 +9,7 @@ const ButtonContainer = styled.div`
   justify-content: space-between;
   padding: 0.75rem 2rem;
   margin: 0 auto;
+  background-color: #3F3250;
   border: 1px solid #3a3a3a;
   border-radius: 500px;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
@@ -22,7 +23,7 @@ const KeyboardMicButton = (props) => {
   return (
     <Fragment>
       <ButtonContainer onClick={props.onClick}>
-        <IconContext.Provider value={{ color: "#3a3a3a", size: "24px" }}>
+        <IconContext.Provider value={{ color: "#d9d9d9", size: "24px" }}>
           <span>
             <FaRegKeyboard />
           </span>
