@@ -8,9 +8,7 @@ import {
   hideContainer,
   showContainer,
 } from "../redux/actions/quickReplyAction";
-
 import InputBar from "../components/ChatInput/InputBar";
-import KeyboardMicButton from "../components/ChatInput/KeyboardMicButton";
 import QuickReplyContainer from "../components/ChatInput/QuickReplyContainer";
 
 
@@ -52,7 +50,8 @@ const ToggleButton = styled.span`
 `;
 
 const InputContainer = () => {
-  const [inputActive, setInputActive] = useState(false);
+  // eslint-disable-next-line
+  const [inputActive] = useState(false);
   return (
     <Fragment>
         <InputBar />
