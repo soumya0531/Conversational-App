@@ -12,11 +12,10 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     background-image: url(${ background });
     background-position: center;
-    background-repeat: no-repeat; 
     background-size: cover;
-    overflow: hidden;
     width:100%;
-    margin: 10px auto;
+    padding:10px 0;
+    overflow:hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -38,21 +37,23 @@ const GlobalStyle = createGlobalStyle`
   main {
     width: 100%;
     padding: 2rem ;
-    min-height: 500px;
+    height: 500px;
     overflow-y:auto;
-    margin: 0 auto;
    
   }
   .chat{
-    width: 70%;
-    margin: 0 auto;
+    width: 900px;
+    margin: 3rem auto;
     background-color: #F7F3F5;
     border-radius: 10px;
-    
+
+    @media (max-width: 900px){
+      width: 90%;
+    }   
     
   }
   .chat-footer{
-    position: absolute;
+    position: sticky;
     bottom:0;
     width: 100%;
     
@@ -62,33 +63,23 @@ const GlobalStyle = createGlobalStyle`
     position: sticky;
     top:0;
     width: 100%;
-    
+    border-radius: 10px;    
   }
 `;
 
 
 const Layout = () => {
-  const ref = useRef(null);
-  const scrollToBottom = (direct = false) => {
-    // passing direct to this forces scrolling instantly, instead of animating.
-    if (ref.current?.scrollIntoView) {
-      ref.current.scrollIntoView({ behavior: direct ? "auto" : "smooth" });
-    }
-  };
-  useEffect(() => {
-    scrollToBottom();
-  });
   return (
     <Fragment>
       <GlobalStyle />
       <div className="chat">
-      <div className="chat-header">
-      <ChatHeader />
-      </div>
-      <main><ChatContainer /></main>
-      <div className="chat-footer">
-      <ChatFooter />
-      </div>
+        <div className="chat-header">
+          <ChatHeader />
+        </div>
+        <main><ChatContainer /></main>
+        <div className="chat-footer">
+          <ChatFooter />
+        </div>
       </div>
     </Fragment>
   );

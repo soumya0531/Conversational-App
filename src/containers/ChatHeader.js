@@ -75,7 +75,7 @@ const ChatHeader = () => {
           src= {logo}
           alt="Company Logo"
         />
-        <LogoText className="text-white">DELL SOLUTIONS</LogoText>
+        <LogoText className="text-white">SOLUTIONS</LogoText>
       </LogoContainer>
       <Toggler onClick={toggle} type="button" aria-label="Toggle navigation">
         <IconContext.Provider value={{ size: "24px", color: "#fff" }}>

@@ -17,7 +17,7 @@ import QuickReplyContainer from "../components/ChatInput/QuickReplyContainer";
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 1rem 2.5rem;
+  padding: 1rem 0;
   background-color: #d9d9d9;
   border-radius: 0 0 10px 10px;
 `;
@@ -55,11 +55,7 @@ const InputContainer = () => {
   const [inputActive, setInputActive] = useState(false);
   return (
     <Fragment>
-      {inputActive ? (
-        <InputBar hideInput={() => setInputActive(false)} />
-      ) : (
-        <KeyboardMicButton onClick={() => setInputActive(true)} />
-      )}
+        <InputBar />
     </Fragment>
   );
 };

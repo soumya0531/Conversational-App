@@ -22,7 +22,7 @@ const Border = `1px solid ${ButtonColor}`;
 const Wrapper = styled.div`
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.4);
   border-radius: 50px;
-  width: 70%;
+  width: 90%;
   margin: auto;
 `;
 
