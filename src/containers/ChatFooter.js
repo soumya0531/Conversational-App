@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled(Collapse)`
-  width: 90%;
+  width: 100%;
   scroll-snap-type: x mandatory;
   overflow-x: auto;
   margin-bottom: 1rem;

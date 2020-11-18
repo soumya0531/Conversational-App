@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://virtual-market-researcher.herokuapp.com",
+  baseURL: "www.google.com",
 });
 
 export default API;

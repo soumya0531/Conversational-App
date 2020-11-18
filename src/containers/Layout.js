@@ -15,7 +15,8 @@ const GlobalStyle = createGlobalStyle`
     background-repeat: no-repeat; 
     background-size: cover;
     overflow: hidden;
-    padding: 10px 300px;
+    width:100%;
+    margin: 10px auto;
   }
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
@@ -36,34 +37,32 @@ const GlobalStyle = createGlobalStyle`
   
   main {
     width: 100%;
-    padding: 6rem ;
-    height: 500px;
+    padding: 2rem ;
+    min-height: 500px;
     overflow-y:auto;
     margin: 0 auto;
-    @media(max-width: 992px) {
-      width: 80%;
-      padding: 6rem 0;
-    }
+   
   }
   .chat{
-    width: 900px;
-    margin: 100px auto;
+    width: 70%;
+    margin: 0 auto;
     background-color: #F7F3F5;
     border-radius: 10px;
+    
     
   }
   .chat-footer{
     position: absolute;
     bottom:0;
-    width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    
   }
 
   .chat-header{
     position: sticky;
     top:0;
-    width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    
   }
 `;
 
@@ -86,8 +85,7 @@ const Layout = () => {
       <div className="chat-header">
       <ChatHeader />
       </div>
-      <main><ChatContainer /><div
-        ref={ref} /></main>
+      <main><ChatContainer /></main>
       <div className="chat-footer">
       <ChatFooter />
       </div>
