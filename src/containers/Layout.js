@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     background-position: center;
     background-size: cover;
     width:100%;
-    padding: 1.5rem 0;
+    padding: 10px 0;
     overflow:hidden;
   }
   h1, h2, h3, h4, h5, h6 {
