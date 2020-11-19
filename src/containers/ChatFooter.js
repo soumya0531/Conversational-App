@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { Fragment } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { Collapse } from "reactstrap";
@@ -51,7 +51,6 @@ const ToggleButton = styled.span`
 
 const InputContainer = () => {
   // eslint-disable-next-line
-  const [inputActive] = useState(false);
   return (
     <Fragment>
         <InputBar />

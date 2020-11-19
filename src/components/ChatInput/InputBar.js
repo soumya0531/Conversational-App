@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Button, Form, Input, InputGroup, InputGroupAddon } from "reactstrap";
 import { IconContext } from "react-icons";
@@ -200,8 +199,6 @@ const InputBar = ({ hideInput }) => {
   );
 };
 
-InputBar.propTypes = {
-  hideInput: PropTypes.func.isRequired,
-};
+
 
 export default InputBar;

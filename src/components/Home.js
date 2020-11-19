@@ -19,7 +19,7 @@ import logo from '../images/logo.gif';
 
     ],
     callbacks: {
-      signInSuccess: () => false
+      signInSuccessWithAuthResult: () => false
     }
   }
     
