@@ -14,7 +14,7 @@ import { clearMessage } from "../redux/actions/messageAction";
 
 import NavButton from "../components/NavButton";
 import logo from "../images/logo.gif";
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 const StyledNavbar = styled(Navbar)`
   width: 100%;

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import userImage from "../../images/user.jpg";
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 
 const ChatContainer = styled.div`
   display: flex;

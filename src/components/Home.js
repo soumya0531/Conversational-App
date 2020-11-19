@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 import './Home.css';
 // eslint-disable-next-line no-unused-vars
@@ -8,7 +9,7 @@ import Layout from '../containers/Layout';
 import logo from '../images/logo.gif';
 
 
-    class Home extends React.Component {
+  class Home extends React.Component {
 
   state = { isSignedIn: false }
   uiConfig = {
