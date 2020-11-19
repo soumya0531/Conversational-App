@@ -21,11 +21,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
   }
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
   
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+    box-shadow: inset 0 0 4px grey; 
     border-radius: 10px;
   }
    

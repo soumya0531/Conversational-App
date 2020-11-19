@@ -72,7 +72,7 @@ const SpeechRecognition =
 const recognition =
   SpeechRecognition === undefined ? null : new SpeechRecognition();
 
-const InputBar = ({ hideInput }) => {
+const InputBar = () => {
   const dispatch = useDispatch();
   const [listening, setListening] = useState(false);
   const [supported, setSupported] = useState(false);
@@ -172,7 +172,6 @@ const InputBar = ({ hideInput }) => {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type here... "
             onKeyDown={(e) => handleKeyDown(e)}
-            onDoubleClick={() => hideInput()}
             innerRef={inputRef}
           />
           <InputGroupAddon addonType="append">
@@ -198,7 +197,6 @@ const InputBar = ({ hideInput }) => {
     </Wrapper>
   );
 };
-
 
 
 export default InputBar;
