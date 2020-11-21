@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { Button, Form, Input, InputGroup, InputGroupAddon } from "reactstrap";
 import { IconContext } from "react-icons";
+import io from 'socket.io-client';
 import {
   FaRedo,
   FaPaperPlane,
@@ -11,7 +12,6 @@ import {
 } from "react-icons/fa";
 import useSound from "use-sound";
 import hel from "../../audioclip/Blop.mp3";
-
 
 import { sendMessage, clearMessage } from "../../redux/actions/messageAction";
 
@@ -64,65 +64,125 @@ const SpeakButton = styled(BaseButton)`
   border-radius: 0 50px 50px 0 !important;
 `;
 
-// Find out if SpeechRecognition exists in the browser window
-const SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
 
-// Initialize the API if exists, else set it to null
-const recognition =
-  SpeechRecognition === undefined ? null : new SpeechRecognition();
+let bufferSize = 2048,
+	context,
+	processor,
+	input,
+	globalStream
+
+const downsampleBuffer = (buffer, sampleRate, outSampleRate) => {
+	if (outSampleRate === sampleRate) {
+		return buffer
+	}
+	if (outSampleRate > sampleRate) {
+		throw new Error('downsampling rate show be smaller than original sample rate')
+	}
+	var sampleRateRatio = sampleRate / outSampleRate
+	var newLength = Math.round(buffer.length / sampleRateRatio)
+	var result = new Int16Array(newLength)
+	var offsetResult = 0
+	var offsetBuffer = 0
+	while (offsetResult < result.length) {
+		var nextOffsetBuffer = Math.round((offsetResult + 1) * sampleRateRatio)
+		var accum = 0, count = 0
+		for (var i = offsetBuffer; i < nextOffsetBuffer && i < buffer.length; i++) {
+			accum += buffer[i]
+			count++
+		}
+
+		result[offsetResult] = Math.min(1, accum / count) * 0x7FFF
+		offsetResult++
+		offsetBuffer = nextOffsetBuffer
+	}
+	return result.buffer
+}
 
 const InputBar = () => {
   const dispatch = useDispatch();
-  const [listening, setListening] = useState(false);
-  const [supported, setSupported] = useState(false);
   const [message, setMessage] = useState("");
-  const inputRef = useRef(null);
+  const socket = useRef(null);
+  const [transcript, setTranscript] = useState('')
+  const [isStreaming, setIsStreaming] = useState(false)
 
   useEffect(() => {
-    // Check the `recognition` variable and set support accordingly.
-    if (recognition === null) setSupported(false);
-    else setSupported(true);
-    // Focus on the input
-    inputRef.current.focus();
+    setupSocket()
   }, []);
 
-  // useEffect for listening status
-  useEffect(() => {
-    if (listening) {
-      recognition.start();
-    } else {
-      recognition.stop();
-    }
-  }, [listening]);
+  const setupSocket = () => {
+    console.log("hello");
+    socket.current = io('http://localhost:3001', {
+      reconnection: true,
+      reconnectionDelay: 1000,
+      reconnectionDelayMax: 5000,
+      reconnectionAttempts: Infinity,
+    })
 
-  const handleListen = () => {
-    // If the API is supported on the browser
-    if (supported) {
-      if (listening) {
-        // If already listening, stop the speech recognition
-        setListening(false);
-      } else {
-        // Otherwise, start listening for speech
-        setListening(true);
-        recognition.onstart = () => console.log("Voice activated");
-        recognition.onresult = (e) => {
-          // Get the speech result of highest confidence and set it to input bar
-          const result = e.results[e.resultIndex][0].transcript.trim();
-          console.log("Recognition Result: ", result);
-          setMessage(result);
-        };
-        // When speech ends, automatically stop the recognition
-        recognition.onspeechend = () => {
-          console.log("Voice stopped");
-          setListening(false);
-        };
-      }
-      // If not supported, display an alert
-    } else {
-      alert("Sorry, WebSpeechAPI currently works only on Chrome and Edge.");
+    socket.current.on('connect', () => {
+      console.log('connected')
+    })
+
+    socket.current.on('data', (data) => {
+      console.log(data);
+      setTranscript(data)
+    })
+  }
+
+  const setup = async () => {
+    context = new (window.AudioContext || window.webkitAudioContext)({
+      latencyHint: 'interactive',
+    })
+    processor = context.createScriptProcessor(bufferSize, 1, 1)
+    processor.connect(context.destination)
+    context.resume()
+
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+    globalStream = stream
+    input = context.createMediaStreamSource(stream)
+    input.connect(processor)
+
+    processor.onaudioprocess = (e) => {
+      microphoneProcess(e)
     }
-  };
+  }
+
+  const microphoneProcess = (e) => {
+    var left = e.inputBuffer.getChannelData(0)
+    var left16 = downsampleBuffer(left, 44100, 16000)
+    socket.current.emit('stream', left16)
+  }
+
+  const start = () => {
+    setup();
+    setIsStreaming(true);
+    console.log("started");
+        
+
+  }
+
+  const stop = () => {
+    if (isStreaming) {
+      // stop record track from browser
+      let track = globalStream.getTracks()[0]
+      track.stop();
+      console.log("stopping");
+
+      // stop recorder from browser
+      input.disconnect(processor)
+      processor.disconnect(context.destination)
+      context.close().then(() => {
+        input = null
+        processor = null
+        context = null
+        socket.current.emit('stop')
+      })
+
+      setIsStreaming(false);
+      setMessage(transcript);
+      console.log(message);
+    }
+  }
+
 
   //Check if message is empty or not
   const handleValidation = () => {
@@ -147,6 +207,7 @@ const InputBar = () => {
     if (handleValidation()) {
       dispatch(sendMessage(message));
       setMessage("");
+      setTranscript("");
       play();
     } else {
       alert("Please enter something!");
@@ -172,7 +233,7 @@ const InputBar = () => {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Type here... "
             onKeyDown={(e) => handleKeyDown(e)}
-            innerRef={inputRef}
+            innerRef={socket}
           />
           <InputGroupAddon addonType="append">
             <SendButton type="submit">
@@ -181,22 +242,30 @@ const InputBar = () => {
               </IconContext.Provider>
             </SendButton>
           </InputGroupAddon>
-          <InputGroupAddon addonType="append">
-            <SpeakButton onClick={() => handleListen()}>
+          {isStreaming ? (
+            <InputGroupAddon addonType="append">
+            <SpeakButton onClick={stop}>
               <IconContext.Provider value={{ color: ButtonColor }}>
-                {listening ? (
-                  <FaAssistiveListeningSystems />
-                ) : (
-                  <FaMicrophoneAlt />
-                )}
+              <FaAssistiveListeningSystems />
+
               </IconContext.Provider>
             </SpeakButton>
           </InputGroupAddon>
+          ) : (
+            <InputGroupAddon addonType="append">
+            <SpeakButton onClick={start}>
+              <IconContext.Provider value={{ color: ButtonColor }}>
+                
+                  <FaMicrophoneAlt />
+              </IconContext.Provider>
+            </SpeakButton>
+          </InputGroupAddon>
+          
+          )}
         </InputGroup>
       </Form>
     </Wrapper>
   );
 };
-
 
 export default InputBar;
