@@ -6,7 +6,7 @@ import './Home.css';
 // eslint-disable-next-line no-unused-vars
 import { auth } from '../api/firebase';
 import Layout from '../containers/Layout';
-import logo from '../images/logo.gif';
+import logo from '../images/logo1.jpg';
 
 
   class Home extends React.Component {

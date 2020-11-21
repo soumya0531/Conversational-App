@@ -13,7 +13,7 @@ import { clearMessage } from "../redux/actions/messageAction";
 
 
 import NavButton from "../components/NavButton";
-import logo from "../images/logo.gif";
+import logo from "../images/logo.png";
 import firebase from 'firebase/app';
 
 const StyledNavbar = styled(Navbar)`
@@ -40,6 +40,7 @@ const LogoImage = styled.img`
 
 const LogoText = styled.h3`
   margin-top: 10px;
+  font-family: 'Castoro', serif;
   @media (max-width: 768px) {
     font-size:28px;
   }
