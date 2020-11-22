@@ -39,7 +39,7 @@ const sendFirstMessage = () => {
   return (dispatch) => {
     dispatch({
       type: BOT_MESSAGE,
-      payload:{text:"Hey! I am your virtual customer services agent.How may I help you today?", messageBy:"BOT"}
+      payload:{text:"Hey! I am your virtual customer services agent. How may I help you today?", messageBy:"BOT"}
     })
   };
 };
