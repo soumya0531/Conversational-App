@@ -155,7 +155,7 @@ const InputBar = () => {
   const start = () => {
     setup();
     setIsStreaming(true);
-    console.log("started");
+    console.log("voice started");
         
 
   }
@@ -165,7 +165,7 @@ const InputBar = () => {
       // stop record track from browser
       let track = globalStream.getTracks()[0]
       track.stop();
-      console.log("stopping");
+      console.log("voice deactivated");
 
       // stop recorder from browser
       input.disconnect(processor)
