@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import BotMessage from "../components/Messages/BotMessage";
 import UserMessage from "../components/Messages/UserMessage";
-import AttachmentHandler from "../components/AttachmentHandler";
 
 import { sendFirstMessage } from "../redux/actions/messageAction";
 import {
