@@ -111,7 +111,7 @@ const InputBar = () => {
 
   const setupSocket = () => {
     console.log("hello");
-    socket.current = io('http://localhost:3001', {
+    socket.current = io('https://converstaional-app-speech.herokuapp.com/', {
       reconnection: true,
       reconnectionDelay: 1000,
       reconnectionDelayMax: 5000,
