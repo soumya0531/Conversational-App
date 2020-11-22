@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fleet-ivy-296117",
+  "private_key_id": "f9929280a46b8db105f9a3e0f61a9597891ad0ff",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCwpbzYGyNTCc7A\ntLsNrm9+bM+CszJ9oj+8j3oaJr6ufv+0hGvrMIC/ibbOxcudZhRy4Tl3iLaIFt4t\nsnO2UGZjWL9kJbN2YCc01BR+c8Hc/GWN654qSG5qf8a0rhGSeOyEJXISdhB06DDF\nyH9oavdpuvpEdGBe+sOxC9mbt+/VdkYojiZZa9Tj6mE/104oUcpcq+z5k099SS3x\ngUiEQOtUI4b1HQvQblOkWO86NB63JGEga9q9TDnu8sQ3e7mTeAhm2iGIMUUeBCrI\ne1TiFlNtZtFD/7BW8KOS2CpadTPKd9FSE7f0tpFiG7//ISvKBRMObzeA7ZoIMDkb\nXbmDtnadAgMBAAECggEAOVs/Q44gPKSpGMI2ID2c3xh2knIb+VYWyuNtWpNtA5yh\n61u57M49Z7PQAziPIgbUqe5+adUeq3Z9YqoYT0Cw1h4pWtuw90VGRa19EAgHEPl1\nAg1YuFL3YyYk/2Kruvr/lPLRpLPoKQWBXJ76240r041OGK8O4ZgbtV9rI1gojA8G\nlqBjyPvkZPRSkFA/viH2pRCzuUIYbV4F/1zHVyBYrEdagwy9Yp/oWPmMV+S80KtP\nziTPSUCF5viYekMPv2Crp4f56uDJCbH9ZLP4hSr5/bCnE7be2QxLboStbPl2vI3A\nrwD0YagxSsSDH1hFVTKv/lgZSeArAtmwFtQYHyw1owKBgQDaxfFa+l3BtSlF3KH1\n0eCVj5nkNdUjomzWNAhDDL875NKaeD9zAVsKh4fqp6E5+gnskv5ZFgn9UAgcUsnF\nwo8VYeAKU8lsrtXn+gJQQvtaSkt1owEpyILV6oDLtFMGocXraFczOmc6VaZxOCrR\nws1q5jhmSvOcACRy9/2id34EXwKBgQDOtLzsLHDuCm6bzEWRPJYkYqI6BHNHtKWZ\np+SZszR6FCTK/YoPEzAM7p8ED9ztArvIXlVi7VT0RTAvl2rrRnWmY8AhBfKuzCam\nk/b3ml2NpNWh/XK7azJA2bsJMIIMv7x2wu/UTqfGm02UK4Z9w8ZlDrDMJXit6kAb\nVLpJyeAGgwKBgC1b5RLL3iyPdyM4/4uMHFhmEa4zSyG8R3ySBTSBrBSq+M92JxGd\nMlcYiqGoZ9ExemVGhN3Lp/6RXV0h/Ru3nxr71AvQG28hQNB8EYa6nIq35LVbOp6D\nKD1aBaI2nRA+8l5An/PLJCQAJiZLUvVywkxrtz3eRGwPy37a1AefZs1ZAoGAPEoV\nDGGN8rASQNjctZbRR/2IyZlAsnprDp0cnQPa23yCmr5GhU0YZ701ni6uRmbUtIVn\nLDqC29hOTKNCaSsc55ISmM8uUHN1FoLztpZMkSKxuNS+oRGMD8QxvGVsmSFXa+BB\nqU/juZbUktH7ITV36UPWp0SKpVc8qXwV9a2u7NcCgYB7YKtHbqPTm/GIRk3LLa9Q\nN0xXdcswH3E5NDOJiVGS+HGCohLH6Wpp1Z66TWlxDn2oiJ96Znw7+mdjIVvWzD/M\nqlUSx4DCC5xMqEvNoOdX6UIUqitFMwvA3Rw1OS16E+VaXkzZ+SRkBsuKXEh3+u/y\njhH5sZZI5+jF5lkkXhKooQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dell-conversational-app@fleet-ivy-296117.iam.gserviceaccount.com",
+  "client_id": "110322561739642932539",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dell-conversational-app%40fleet-ivy-296117.iam.gserviceaccount.com"
+}

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.2.0",
+    "@google-cloud/speech": "^4.1.4",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "firebase": "^8.0.2",
@@ -41,7 +42,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "nodemon server.js"
+
   },
   "eslintConfig": {
     "extends": "react-app"
