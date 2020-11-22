@@ -61,14 +61,14 @@ const ChatContainer = () => {
         return (
           <Fragment key={i}>
             {item.messageBy === "USER" ? (
-              <UserMessage key={i} text={item.userMessage} />
+              <UserMessage key={i} text={item.message} />
             ) : null}
             {item.messageBy === "BOT" ? (
-              <BotMessage key={i} text={item.queryResult} />
+              <BotMessage key={i} text={[item.text]} />
             ) : null}
-            {item.messageBy === "BOT" && item.attachment[0]?.type ? (
+            {/* {item.messageBy === "BOT" && item.attachment[0]?.type ? (
               <AttachmentHandler attachments={item.attachment} />
-            ) : null}
+            ) : null} */}
           </Fragment>
         );
       })}

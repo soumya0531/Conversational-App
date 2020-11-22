@@ -8,7 +8,6 @@ import { auth } from '../api/firebase';
 import Layout from '../containers/Layout';
 import logo from '../images/logo1.jpg';
 
-
   class Home extends React.Component {
 
   state = { isSignedIn: false }
@@ -30,6 +29,7 @@ import logo from '../images/logo1.jpg';
             this.setState({ isSignedIn: !!user })
             console.log("user", user)
           })
+
     }
     
     render(){

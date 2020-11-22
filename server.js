@@ -13,7 +13,7 @@ const request = {
     sampleRateHertz: 16000,
     languageCode: 'en-US'
   },
-  interimResults: false
+  interimResults: true
 }
 
 let recognizeStream = null

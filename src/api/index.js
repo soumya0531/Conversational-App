@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "www.google.com",
+  baseURL: "https://conversational-app-test.herokuapp.com/",
 });
 
 export default API;

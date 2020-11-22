@@ -6,7 +6,7 @@ import botImage from "../../images/bot.jpg";
 
 const ChatContainer = styled.div`
   display: flex;
-  margin: 7rem 0;
+  margin: 1.25rem 0;
 `;
 
 const ChatImg = styled.img`
