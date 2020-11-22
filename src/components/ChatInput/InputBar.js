@@ -115,7 +115,7 @@ const InputBar = () => {
       reconnection: true,
       reconnectionDelay: 1000,
       reconnectionDelayMax: 5000,
-      reconnectionAttempts: Infinity,
+      reconnectionAttempts: 5,
     })
 
     socket.current.on('connect', () => {
