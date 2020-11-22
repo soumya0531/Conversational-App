@@ -39,7 +39,7 @@ const LogoImage = styled.img`
 `;
 
 const LogoText = styled.h3`
-  margin-top: 10px;
+  margin-top: 14px;
   font-family: 'Castoro', serif;
   @media (max-width: 768px) {
     font-size:28px;
